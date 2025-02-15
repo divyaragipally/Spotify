@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 15px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile {
+    background-color: pink;
+    color: black;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters button {
+    background: #1DB954;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.filters .active {
+    background: white;
+    color: black;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.category {
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.category img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.popular-radio h2 {
+    margin-top: 20px;
+}
+
+.radio-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.radio {
+    min-width: 120px;
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.radio img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.recents h2 {
+    margin-top: 20px;
+}
+
+.recent-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.recent {
+    min-width: 120px;
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.recent img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #282828;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
