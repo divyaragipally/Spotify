@@ -1,112 +1,32 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Spotify</title>
+    <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign up to <br>start listening</h1>
+        <form action="#">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="name@domain.com" required>
 
-.container {
-    background: #181818;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;  /* Adjusted width for better layout */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+            <a href="./phone.html" class="alternate">Use phone number instead</a>
 
-h1 {
-    font-size: 18px;  /* Reduced heading size */
-    margin-bottom: 15px;
-}
+            <button class="next"><a href="./pwd.html">Next</a></button>
 
-label {
-    font-size: 12px;  /* Smaller label text */
-    font-weight: bold;
-    display: block;
-    text-align: left;
-}
+            <div class="divider">
+                <span>or</span>
+            </div>
 
-input {
-    width: 100%;
-    padding: 8px;  /* Slightly smaller padding */
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;  /* Smaller input text */
-}
+            <button class="social google">Sign up with Google</button>
+            <button class="social facebook">Sign up with Facebook</button>
+            <button class="social apple">Sign up with Apple</button>
 
-.alternate {
-    display: block;
-    margin: 8px 0;
-    color: #1DB954;
-    text-decoration: none;
-    font-size: 12px;  /* Smaller alternate option text */
-}
-
-.next {
-    width: 100%;
-    padding: 8px;  /* Adjusted button size */
-    background-color: #1DB954;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;  /* Smaller button text */
-    color: white;
-    cursor: pointer;
-    margin-top: 8px;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 15px 0;
-    font-size: 12px;  /* Smaller divider text */
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid #666;
-    margin: 10px;
-}
-
-.social {
-    width: 100%;
-    padding: 8px;
-    margin: 4px 0;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;  /* Smaller social button text */
-    cursor: pointer;
-}
-
-.google {
-    background-color: white;
-    color: black;
-}
-
-.facebook {
-    background-color: #1877F2;
-    color: white;
-}
-
-.apple {
-    background-color: black;
-    color: white;
-}
-
-.login-text {
-    margin-top: 15px;
-    font-size: 12px;  /* Smaller login text */
-}
-
-.login-text a {
-    color: #1DB954;
-    text-decoration: none;
-    font-weight: bold;
-}
+            <p class="login-text">Already have an account? <a href="./login.html">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>
