@@ -3,28 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.R. Rahman - Jai Ho</title>
-    <link rel="stylesheet" href="page.css">
+    <title>Jai Ho - A.R. Rahman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #ff5733;
+        }
+        
+        h2 {
+            color: #444;
+        }
+        
+        .player {
+            margin: 20px 0;
+        }
+        
+        .lyrics {
+            background: #ffefe0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .back-button:hover {
+            background: #e74c3c;
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="song-container">
+
+    <div class="container">
         <h1>Jai Ho</h1>
-        <h2>A.R. Rahman</h2>
-        
-        <audio controls autoplay>
-            <source src="D:\spotify\Blue - Yung Kai, Marilag💗 Best OPM Tagalog Love Songs💗 OPM Tagalog Top Songs 2024 Playlist.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+        <h2>Singer: A.R. Rahman</h2>
+
+        <div class="player">
+            <audio controls autoplay>
+                <source src="kissik.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
         <div class="lyrics">
             <h3>Lyrics</h3>
             <p>
                 Jai Ho! Jai Ho! <br>
-                Aaja aaja jind shamiyane ke tale, aaja jariwale nile aasman ke tale...  
+                Aaja aaja jind shamiyane ke tale, <br>
+                Aaja jariwale nile aasman ke tale...
             </p>
         </div>
 
-        <a href="./page.html">⬅ Back to Home</a>
+        <a href="page.html" class="back-button">⬅ Back to Home</a>
     </div>
+
 </body>
 </html>
