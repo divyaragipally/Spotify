@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spotify</title>
+    <style>
+        body {
+            background-color: rgb(36, 33, 33);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        form {
+            background-color: black;
+            width: 250px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        form p {
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .social-button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .google {
+            background-color: rgb(59, 54, 54);
+            color: black;
+        }
+
+        .facebook {
+            background-color: #1877F2;
+            color: white;
+        }
+
+        .apple {
+            background-color: #000;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .separator span {
+            margin: 0 10px;
+            color: gray;
+            font-size: 14px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gray;
+            border-radius: 8px;
+            background-color: rgb(24, 24, 24);
+            color: white;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-button {
+            width: 90%;
+            padding: 10px;
+            background-color: #1DB954;
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #dfe8e2;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .signup {
+            margin-top: 10px;
+            font-size: 10px;
+        }
+        label {
+            font-size: 12px;  
+            font-weight: bold;
+            display: block;
+            text-align: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <p>Login to Spotify</p>
+        <button class="social-button google"><a href="./page.html">Continue with Google</a></button>
+        <button class="social-button facebook"><a href="./page.html">Continue with Facebook</a></button>
+        <button class="social-button apple"><a href="./page.html">Continue with Apple</a></button>
+
+        <div class="separator">
+            <span>or</span>
+        </div>
+
+        <label for="email">Email or username</label>
+        <input type="text" id="email" placeholder="Email or username">
+
+        <label for="password">Password</label>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" class="toggle-password" onclick="togglePassword()"></button>
+        </div>
+
+        <button class="login-button"><a href="./page.html">Log In</a></button>
+
+        <a href="./forgot.html">Forgot your password?</a>
+
+        <p class="signup">Don't have an account? <a href="./signup.html">Sign up for Spotify</a></p>
+    </form>
+</body>
+</html>

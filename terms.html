@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Spotify</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            background: #181818;
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;  /* Reduced width */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .checkbox-container {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        a {
+            color: #3d12db;
+            text-decoration: none;
+        }
+        button {
+            background-color: #1DB954;
+            color: black;
+            border-radius: 50px;
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Step 3 of 3</h3>
+        <h2>Terms & Conditions</h2>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="marketing">
+            <label for="marketing">I would prefer not to receive marketing messages from Spotify</label>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="data-sharing" required>
+            <label for="data-sharing">Share my registration data with Spotify's content providers for marketing purposes.</label>
+        </div>
+
+        <p>By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use.</p>
+
+        <button><a href="./page.html">Sign Up</a></button>
+    </div>
+</body>
+</html>

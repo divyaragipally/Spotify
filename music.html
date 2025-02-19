@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="./page.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="profile">D</div>
+            <div class="filters">
+                <button><a href="./music.html">Music</a></button>
+                <button>Podcasts</button>
+            </div>
+        </header>
+    <section class="categories">
+        <div class="category" onclick="goToSongs('oye')"> 
+            <img src="oye.jpg" alt=""> 
+            <span><a href="./oye/oye.html">Oye</a></span>
+        </div>
+        
+        <div class="category" onclick="goToSongs('moody')"> 
+            <img src="moody.jpg" alt=""> 
+            <span><a href="./moody/moody.html">Moody Mix</a></span>
+        </div>
+        <div class="category" onclick="goToSongs('ipop')"> 
+            <img src="ipop.jpg" alt=""> 
+            <span><a href="./ipop/ipop.html">I-Pop Icons</a></span>
+        </div>
+        <div class="category" onclick="goToSongs('desihits')"> 
+            <img src="desihits.jpg" alt=""> 
+            <span><a href="./desihits/desi.html">Desi Hits</a></span>
+        </div>
+        <div class="category" onclick="goToSongs('trending_india')"> 
+            <img src="trending_india.jpg" alt=""> 
+            <span><a href="./trending/trending.html">Trending Now India</a></span>
+        </div>
+        <div class="category" onclick="goToSongs('trending_telugu')"> 
+            <img src="trending_telugu.jpg" alt=""> 
+            <span><a href="./popshots/pop.html">Pop Shots</a></span>
+        </div>
+    </section>
+    
+    <script>
+        function goToSongs(category) {
+            window.location.href = `songs.html?category=${category}`;
+        }
+    </script>
+
+    <section class="popular-radio">
+        <h2>Popular radio</h2>
+        <div class="radio-list">
+            <div class="radio">
+                <img src="./arjit/arjit.jpg" 
+                     alt="A.R. Rahman" usemap="#arrahman" height="100" width="150">
+                <map name="arrahman">
+                    <area shape="rect" coords="0,0,150,100" href="./arjit/arjit.html" alt="A.R. Rahman">
+                </map>
+                <p><a href="./arjit/arjit.html">Arjit Singh</a></p>
+            </div>
+            
+            <div class="radio">
+                <img src="./karthik/karthik.jpg" 
+                     alt="Karthik" usemap="#karthik" height="100" width="150">
+                <map name="karthik">
+                    <area shape="rect" coords="0,0,150,100" href="./karthik/karthik.html" alt="Karthik">
+                </map>
+                <p><a href="./karthik/karthik.html">Karthik</a></p>
+            </div>
+
+            <div class="radio">
+                <img src="./shreya/shreya.jpg" 
+                     alt="Shreya Ghoshal" usemap="#shreya" height="100" width="150">
+                <map name="shreya">
+                    <area shape="rect" coords="0,0,150,100" href="./shreya/shreya.html" alt="Shreya Ghoshal">
+                </map>
+                <p><a href="./shreya/shreya.html">Shreya Ghoshal</a></p>
+            </div>
+            
+            <div class="radio">
+                <img src="./anirudh/ani.jpg" 
+                     alt="Sid Sriram" usemap="#sid" height="100" width="150">
+                <map name="sid">
+                    <area shape="rect" coords="0,0,150,100" href="./anirudh/anirudh.html" alt="Sid Sriram">
+                </map>
+                <p><a href="./anirudh/anirudh.html">Anirudh Ravichander</a></p>
+            </div>
+
+            <div class="radio">
+                <img src="./atif/atif.jpg" 
+                     alt="Atif Aslam" usemap="#atif" height="100" width="150">
+                <map name="atif">
+                    <area shape="rect" coords="0,0,150,100" href="./atif/atif.html" alt="Atif Aslam">
+                </map>
+                <p><a href="./atif/atif.html">Atif Aslam</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="recents">
+        <h2>Recents</h2>
+        <div class="recent-list">
+            <div class="recent">
+                <img src="./tollywood/tollywood.jpg" 
+                     alt="Tollywood Pearls" usemap="#tollywood">
+                <map name="tollywood">
+                    <area shape="rect" coords="0,0,100,110" href="./tollywood/pearls.html">
+                </map>
+                <p><a href="./tollywood/pearls.html">Tollywood Pearls</a></p>
+            </div>
+
+            <div class="recent">
+                <img src="https://i.scdn.co/image/ab67706f000000020408713c731caaf1f800615a" 
+                     alt="Chill Hits" usemap="#chill">
+                <map name="chill">
+                    <area shape="rect" coords="0,0,100,110" href="./chill/chill.html">
+                </map>
+                <p>Chill Hits</p>
+            </div>
+
+            <div class="recent">
+                <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f84eb8f76e5c02d7e8bac11f" 
+                     alt="2000s Mix" usemap="#mix2000s">
+                <map name="mix2000s">
+                    <area shape="rect" coords="0,0,100,110" href="./2000/main.html">
+                </map>
+                <p>2000s Mix</p>
+            </div>
+            <div class="recent">
+                <img src="https://i.scdn.co/image/ab67616d0000b273042ed866eca5cbc0cf34fdac" 
+                     alt="Trending now" usemap="#Trendingnow">
+                <map name="Trendingnow">
+                    <area shape="rect" coords="0,0,100,110" href="./trending/trending.html">
+                </map>
+                <p>Trending now</p>
+            </div>
+            <div class="recent">
+                <img src="https://i.scdn.co/image/ab67616d00001e0229b3241fc305a512fadc4c87" 
+                     alt="Item Songs" usemap="#itemsongs">
+                <map name="itemsongs">
+                    <area shape="rect" coords="0,0,100,110" href="./item/item.html">
+                </map>
+                <p>Item songs</p>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+</body>
+</html>
