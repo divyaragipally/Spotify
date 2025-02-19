@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Ghoshal - Spotify Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .artist-header {
+            background: linear-gradient(to bottom, #d8824d, #121212);
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            height: 100px;
+        }
+
+        .artist-header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-right: 15px;
+        }
+
+        .artist-info h1 {
+            font-size: 30px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .stats {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+
+        .popular-songs {
+            padding: 10px;
+        }
+
+        .song {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:2px;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+        }
+
+        .song:hover {
+            background: #222;
+        }
+
+        .song img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .song-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .song-title {
+            font-size: 18px;
+        }
+
+        .play-button {
+            background-color: #1db954;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="artist-header">
+        <img src="./shreya.jpg" alt="Shreya Ghoshal">
+        <div class="artist-info">
+            <h1>Shreya Ghoshal</h1>
+            <p class="stats">42,589,850 monthly listeners</p>
+        </div>
+    </div>
+
+    <div class="popular-songs">
+        <h2>Popular</h2>
+
+        <div class="song" onclick="togglePlay(0)">
+            <div class="song-info">
+                <img src="./sooseki.jpg" alt="Sooseki">
+                <div>
+                    <p class="song-title">Sooseki (From "Pushpa 2 The Rule") [TELUGU]</p>
+                </div>
+            </div>
+            <button class="play-button" id="playButton0">▶</button>
+        </div>
+
+        <div class="song" onclick="togglePlay(1)">
+            <div class="song-info">
+                <img src="./rangrez.jpg" alt="O Rangrez">
+                <div>
+                    <p class="song-title">O Rangrez</p>
+                </div>
+            </div>
+            <button class="play-button" id="playButton1">▶</button>
+        </div>
+
+        <div class="song" onclick="togglePlay(2)">
+            <div class="song-info">
+                <img src="./kamleya.jpg" alt="Ve Kamleya">
+                <div>
+                    <p class="song-title">Ve Kamleya (From "Rocky Aur Rani Ki Prem Kahani")</p>
+                </div>
+            </div>
+            <button class="play-button" id="playButton2">▶</button>
+        </div>
+
+        <div class="song" onclick="togglePlay(3)">
+            <div class="song-info">
+                <img src="./tumkyamile.jpg" alt="Tum Kya Mile">
+                <div>
+                    <p class="song-title">Tum Kya Mile (From "Rocky Aur Rani Ki Prem Kahani")</p>
+                </div>
+            </div>
+            <button class="play-button" id="playButton3">▶</button>
+        </div>
+
+        <div class="song" onclick="togglePlay(4)">
+            <div class="song-info">
+                <img src="./samjhawan.jpg" alt="Samjhawan">
+                <div>
+                    <p class="song-title">Samjhawan</p>
+                </div>
+            </div>
+            <button class="play-button" id="playButton4">▶</button>
+        </div>
+    </div>
+
+    <audio id="audioPlayer" controls style="display:none;"></audio>
+
+    <script>
+        const songs = [
+            "Sooseki.mp3",
+            "rangrez.mp3",
+            "kamleya.mp3",
+            "tumkyamile.mp3",
+            "samjhawan.mp3"
+        ];
+        let currentSongIndex = -1;
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        function togglePlay(index) {
+            const playButton = document.getElementById(`playButton${index}`);
+
+            if (index === currentSongIndex && !audioPlayer.paused) {
+                audioPlayer.pause();
+                playButton.textContent = "▶";
+                return;
+            }
+
+            if (index !== currentSongIndex) {
+                audioPlayer.src = songs[index];
+                currentSongIndex = index;
+            }
+
+            audioPlayer.play();
+            updateButtons(index);
+        }
+
+        function updateButtons(activeIndex) {
+            for (let i = 0; i < songs.length; i++) {
+                const button = document.getElementById(`playButton${i}`);
+                button.textContent = i === activeIndex ? "⏸" : "▶";
+            }
+        }
+    </script>
+</body>
+</html>
