@@ -18,7 +18,7 @@
             background: #181818;
             padding: 15px;
             border-radius: 8px;
-            width: 300px;  /* Reduced width */
+            width: 300px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         .checkbox-container {
@@ -47,25 +47,47 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        function redirectToPage(event) {
+            event.preventDefault(); // Prevent default action
+            
+            let marketing = document.getElementById("marketing").checked;
+            let dataSharing = document.getElementById("data-sharing").checked;
+
+            if (!dataSharing) {
+                alert("You must agree to share your registration data.");
+                return;
+            }
+
+            // Store agreement details in localStorage
+            localStorage.setItem("marketingOptOut", marketing);
+            localStorage.setItem("dataSharingConsent", dataSharing);
+
+            // Redirect to the next page
+            window.location.href = "page.html";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h3>Step 3 of 3</h3>
         <h2>Terms & Conditions</h2>
         
-        <div class="checkbox-container">
-            <input type="checkbox" id="marketing">
-            <label for="marketing">I would prefer not to receive marketing messages from Spotify</label>
-        </div>
+        <form onsubmit="redirectToPage(event)">
+            <div class="checkbox-container">
+                <input type="checkbox" id="marketing" required>
+                <label for="marketing">I would prefer not to receive marketing messages from Spotify</label>
+            </div>
 
-        <div class="checkbox-container">
-            <input type="checkbox" id="data-sharing" required>
-            <label for="data-sharing">Share my registration data with Spotify's content providers for marketing purposes.</label>
-        </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="data-sharing" required>
+                <label for="data-sharing">Share my registration data with Spotify's content providers for marketing purposes.</label>
+            </div>
 
-        <p>By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use.</p>
+            <p>By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use.</p>
 
-        <button><a href="./page.html">Sign Up</a></button>
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
 </body>
 </html>
