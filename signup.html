@@ -4,29 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Spotify</title>
-    <link rel="stylesheet" href="./signup.css">
+    <style>
+        body {
+            background-color: rgb(36, 33, 33);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        form {
+            background-color: black;
+            width: 250px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .google {
+            background-color: rgb(59, 54, 54);
+            color: black;
+        }
+
+        .facebook {
+            background-color: #1877F2;
+            color: white;
+        }
+
+        .apple {
+            background-color: #000;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .separator span {
+            margin: 0 10px;
+            color: gray;
+            font-size: 14px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gray;
+            border-radius: 8px;
+            background-color: rgb(24, 24, 24);
+            color: white;
+        }
+
+        .signup-button {
+            width: 90%;
+            padding: 10px;
+            background-color: #1DB954;
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #dfe8e2;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .login {
+            margin-top: 10px;
+            font-size: 10px;
+        }
+
+        label {
+            font-size: 12px;  
+            font-weight: bold;
+            display: block;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function saveEmail(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+
+            if (email.trim() !== "") {
+                localStorage.setItem("signupEmail", email); // Store email
+                window.location.href = "pwd.html"; // Redirect to set password
+            } else {
+                alert("Please enter a valid email address.");
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Sign up to <br>start listening</h1>
-        <form action="#">
-            <label for="email">Email address</label>
-            <input type="email" id="email" placeholder="name@domain.com" required>
+    <form onsubmit="saveEmail(event)">
+        <p>Sign up to Spotify</p>
+        <button class="social-button google"><a href="./page.html">Continue with Google</a></button>
+        <button class="social-button facebook"><a href="./page.html">Continue with Facebook</a></button>
+        <button class="social-button apple"><a href="./page.html">Continue with Apple</a></button>
 
-            <a href="./phone.html" class="alternate">Use phone number instead</a>
+        <div class="separator">
+            <span>or</span>
+        </div>
 
-            <button class="next">Next</button>
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="name@domain.com" required>
 
-            <div class="divider">
-                <span>or</span>
-            </div>
+        <button class="signup-button" type="submit">Next</button>
 
-            <button class="social google"><a href="./page.html">Sign up with Google</a></button>
-            <button class="social facebook"><a href="./page.html">Sign up with Facebook</a></button>
-            <button class="social apple"><a href="./page.html">Sign up with Apple</a></button>
-
-            <p class="login-text">Already have an account? <a href="./login.html">Login here</a></p>
-        </form>
-    </div>
+        <p class="login">Already have an account? <a href="./login.html">Log in here</a></p>
+    </form>
 </body>
 </html>
