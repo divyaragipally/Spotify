@@ -14,44 +14,28 @@
         }
         .artist-header {
             background: linear-gradient(to bottom, #d8824d, #121212);
-            padding: 10px; /* Reduced padding */
+            padding: 10px;
             text-align: left;
             display: flex;
             align-items: center;
-            padding-left: 30px; /* Reduced padding-left */
-            height: 100px; /* Adjust height */
+            padding-left: 30px;
+            height: 100px;
         }
-        
         .artist-header img {
-            width: 80px; /* Reduced size */
-            height: 80px; /* Reduced size */
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             border: 3px solid white;
-            margin-right: 15px; /* Adjust spacing */
+            margin-right: 15px;
         }
-        
         .artist-info h1 {
-            font-size: 30px; /* Reduced font size */
+            font-size: 30px;
             margin: 0;
             font-weight: bold;
         }
-        
         .stats {
-            font-size: 14px; /* Adjusted text size */
+            font-size: 14px;
             color: #b3b3b3;
-        }
-        
-        .buttons {
-            margin-top: 10px;
-        }
-        .play-button {
-            background-color: #1db954;
-            border: none;
-            color: white;
-            padding: 15px 25px;
-            font-size: 16px;
-            border-radius: 50%;
-            cursor: pointer;
         }
         .popular-songs {
             padding: 10px;
@@ -60,7 +44,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding:2px;
+            padding: 10px;
             border-bottom: 1px solid #222;
             cursor: pointer;
         }
@@ -80,89 +64,86 @@
         .song-title {
             font-size: 18px;
         }
-        .song .play-button {
-            padding: 10px 15px;
-            font-size: 14px;
+        .play-button {
+            background-color: #1db954;
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            font-size: 16px;
+            border-radius: 50%;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+
     <div class="artist-header">
-        <img src="../chill/chill.jpg" alt="Anirudh Ravichander">
+        <img src="2000/hits.jpg" alt="Anirudh Ravichander">
         <div class="artist-info">
             <h1>2000s Mix</h1>
             <p class="stats">9,023,406 saves</p>
-            
         </div>
     </div>
 
     <div class="popular-songs">
         <h2>Popular</h2>
+        
         <div class="song" onclick="togglePlay(0)">
             <div class="song-info">
-                <img src="./choopultho.jpg" alt="blue">
-                <div>
-                    <p class="song-title">Choopultho Guchi</p>
-                </div>
+                <img src="2000/choopultho.jpg" alt="Choopultho Guchi">
+                <p class="song-title">Choopultho Guchi</p>
             </div>
             <button class="play-button" id="playButton0">▶</button>
         </div>
+
         <div class="song" onclick="togglePlay(1)">
             <div class="song-info">
-                <img src="./guzarish.jpg" alt="Manasilaayo">
-                <div>
-                    <p class="song-title">Guzarish</p>
-                </div>
+                <img src="2000/guzarish.jpg" alt="Guzarish">
+                <p class="song-title">Guzarish</p>
             </div>
             <button class="play-button" id="playButton1">▶</button>
         </div>
+
         <div class="song" onclick="togglePlay(2)">
             <div class="song-info">
-                <img src="./pachan.jpg" alt="Manasilaayo">
-                <div>
-                    <p class="song-title">Pachadaname Pachadaname</p>
-                </div>
+                <img src="2000/pachan.jpg" alt="Pachadaname">
+                <p class="song-title">Pachadaname Pachadaname</p>
             </div>
-            <button class="play-button" id="playButton1">▶</button>
+            <button class="play-button" id="playButton2">▶</button>
         </div>
+
         <div class="song" onclick="togglePlay(3)">
             <div class="song-info">
-                <img src="./jashn.jpg" alt="Manasilaayo">
-                <div>
-                    <p class="song-title">Jashn-E-Baharaa</p>
-                </div>
+                <img src="2000/jashn.jpg" alt="Jashn-E-Baharaa">
+                <p class="song-title">Jashn-E-Baharaa</p>
             </div>
-            <button class="play-button" id="playButton1">▶</button>
+            <button class="play-button" id="playButton3">▶</button>
         </div>
+
         <div class="song" onclick="togglePlay(4)">
             <div class="song-info">
-                <img src="./tumsehi.jpg" alt="Manasilaayo">
-                <div>
-                    <p class="song-title">Tum se hi</p>
-                </div>
+                <img src="2000/tumsehi.jpg" alt="Tum Se Hi">
+                <p class="song-title">Tum Se Hi</p>
             </div>
-            <button class="play-button" id="playButton1">▶</button>
+            <button class="play-button" id="playButton4">▶</button>
         </div>
+
     </div>
 
-    <audio id="audioPlayer" controls style="display:none;"></audio>
-    
+    <audio id="audioPlayer" style="display:none;"></audio>
+
     <script>
         const songs = [
             "choopultho.mp3",
             "guzarish.mp3",
             "pachan.mp3",
-            "jasn.mp3",
+            "jashn.mp3",
             "tumsehi.mp3"
-           
         ];
+
         let currentSongIndex = -1;
         const audioPlayer = document.getElementById("audioPlayer");
-        const mainPlayButton = document.getElementById("mainPlayButton");
-        const playButtons = [
-            document.getElementById("playButton0"),
-            document.getElementById("playButton1")
-        ];
+        const playButtons = document.querySelectorAll(".play-button");
 
         function togglePlay(index) {
             if (index === currentSongIndex && !audioPlayer.paused) {
@@ -170,20 +151,18 @@
                 updateButtons("▶");
                 return;
             }
-            if (index !== currentSongIndex) {
-                audioPlayer.src = songs[index];
-                currentSongIndex = index;
-            }
+            audioPlayer.src = songs[index];
+            currentSongIndex = index;
             audioPlayer.play();
             updateButtons("⏸");
         }
 
         function updateButtons(symbol) {
-            mainPlayButton.textContent = symbol;
             playButtons.forEach((button, i) => {
                 button.textContent = i === currentSongIndex ? symbol : "▶";
             });
         }
     </script>
+
 </body>
 </html>
