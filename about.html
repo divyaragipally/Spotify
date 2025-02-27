@@ -18,7 +18,7 @@
             background: #181818;
             padding: 15px;
             border-radius: 8px;
-            width: 300px;  /* Reduced width */
+            width: 300px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         input, select {
@@ -29,7 +29,6 @@
             border: 1px solid gray;
             border-radius: 5px;
         }
-      
         button {
             background-color: #1DB954;
             color: black;
@@ -42,27 +41,51 @@
             cursor: pointer;
             margin-top: 20px;
         }
-        a{
+        a {
             text-decoration: none;
         }
     </style>
+    <script>
+        function redirectToTerms(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let name = document.getElementById("name").value;
+            let year = document.getElementById("year").value;
+            let month = document.getElementById("month").value;
+            let day = document.getElementById("day").value;
+            let gender = document.querySelector('input[name="gender"]:checked')?.value || "Not specified";
+
+            if (!name || !year || !month || !day) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Store user data in localStorage
+            localStorage.setItem("signupName", name);
+            localStorage.setItem("signupDOB", `${year}-${month}-${day}`);
+            localStorage.setItem("signupGender", gender);
+
+            // Redirect to terms.html
+            window.location.href = "terms.html";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h3>Step 2 of 3</h3>
         <h2>Tell us about yourself</h2>
         
-        <form>
+        <form onsubmit="redirectToTerms(event)">
             <label for="name">Name</label>
             <p>This name will appear on your profile</p>
-            <input type="text" id="name" placeholder="Enter your name">
+            <input type="text" id="name" placeholder="Enter your name" required>
 
             <h3>Date of birth</h3>
             <p>Why do we need your date of birth?</p>
             
             <div style="display: flex; gap: 10px;">
-                <input type="text" id="year" placeholder="YYYY" style="flex: 1;">
-                <select id="month" style="flex: 1;">
+                <input type="text" id="year" placeholder="YYYY" style="flex: 1;" required>
+                <select id="month" style="flex: 1;" required>
                     <option value="">Month</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
@@ -77,19 +100,19 @@
                     <option value="11">November</option>
                     <option value="12">December</option>
                 </select>
-                <input type="text" id="day" placeholder="DD" style="flex: 1;">
+                <input type="text" id="day" placeholder="DD" style="flex: 1;" required>
             </div>
 
             <h3>Gender</h3>
             <p>We use your gender to help personalize our content recommendations and ads for you.</p>
 
             <div class="gender-options">
-                <input type="radio">Man
-                <input type="radio">Woman
-                <input type="radio">Prefer not to say
+                <input type="radio" name="gender" value="Man"> Man
+                <input type="radio" name="gender" value="Woman"> Woman
+                <input type="radio" name="gender" value="Prefer not to say"> Prefer not to say
             </div>
 
-            <button><a href="./terms.html">Next</a></button>
+            <button type="submit">Next</button>
         </form>
     </div>
 </body>
