@@ -1,50 +1,34 @@
-/* Global styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
-/* Full-screen App */
 .app {
     width: 100%;
-    height: 100vh; /* Full screen height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 400px;
+    margin: auto;
     padding: 15px;
 }
 
-/* Header */
 header {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Profile */
 .profile {
     background-color: pink;
     color: black;
     font-weight: bold;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Filters */
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
 }
 
 .filters button {
@@ -53,8 +37,8 @@ header {
     color: white;
     padding: 8px 15px;
     border-radius: 15px;
+    margin-left: 5px;
     cursor: pointer;
-    font-size: 14px;
 }
 
 .filters .active {
@@ -62,22 +46,23 @@ header {
     color: black;
 }
 
-/* Categories */
 .categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    width: 100%;
-    text-align: center;
-    flex-grow: 1; /* Takes up available space */
-    overflow-y: auto; /* Allows scrolling if needed */
-}
+    margin-top: 20px;
+    cursor: pointer; /* Change cursor to pointer */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-/* Category */
+
 .category {
     background-color: #282828;
     padding: 10px;
     border-radius: 8px;
+    text-align: center;
 }
 
 .category img {
@@ -85,33 +70,56 @@ header {
     border-radius: 5px;
 }
 
-/* Scrollable lists */
-.radio-list, .recent-list {
+.popular-radio h2 {
+    margin-top: 20px;
+}
+
+.radio-list {
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 10px;
-    width: 100%;
 }
 
-/* Radio & Recent items */
-.radio, .recent {
+.radio {
     min-width: 120px;
     background-color: #181818;
     padding: 10px;
     border-radius: 8px;
     text-align: center;
-    scroll-snap-align: start;
 }
 
-.radio img, .recent img {
+.radio img {
     width: 100%;
     border-radius: 50%;
 }
 
-/* Fixed Player Bar */
+.recents h2 {
+    margin-top: 20px;
+}
+
+.recent-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.recent {
+    min-width: 120px;
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.recent img {
+    width: 100%;
+    border-radius: 50%;
+}
+
 .player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     background: #282828;
     padding: 10px;
@@ -120,55 +128,7 @@ header {
     align-items: center;
 }
 
-/* Links */
-a {
+a{
     text-decoration: none;
     color: white;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .profile {
-        width: 35px;
-        height: 35px;
-    }
-
-    .filters button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .categories {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .radio, .recent {
-        min-width: 100px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .profile {
-        width: 30px;
-        height: 30px;
-    }
-
-    .filters {
-        justify-content: center;
-    }
-
-    .filters button {
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-
-    .categories {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    }
-
-    .player {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-}
+} 
