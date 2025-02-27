@@ -1,12 +1,14 @@
 /* Global styles */
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: white;
-    margin: 0;
-    padding: 0;
 }
 
+/* Full-screen App */
 .app {
     width: 100%;
     height: 100vh; /* Full screen height */
@@ -17,22 +19,15 @@ body {
     padding: 15px;
 }
 
-/* App container */
-.app {
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-    padding: 15px;
-}
-
 /* Header */
 header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Profile icon */
+/* Profile */
 .profile {
     background-color: pink;
     color: black;
@@ -72,11 +67,13 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 10px;
-    margin-top: 20px;
+    width: 100%;
     text-align: center;
+    flex-grow: 1; /* Takes up available space */
+    overflow-y: auto; /* Allows scrolling if needed */
 }
 
-/* Category Items */
+/* Category */
 .category {
     background-color: #282828;
     padding: 10px;
@@ -88,11 +85,6 @@ header {
     border-radius: 5px;
 }
 
-/* Popular Radio */
-.popular-radio h2 {
-    margin-top: 20px;
-}
-
 /* Scrollable lists */
 .radio-list, .recent-list {
     display: flex;
@@ -100,9 +92,10 @@ header {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
+    width: 100%;
 }
 
-/* Radio and Recent items */
+/* Radio & Recent items */
 .radio, .recent {
     min-width: 120px;
     background-color: #181818;
@@ -117,18 +110,14 @@ header {
     border-radius: 50%;
 }
 
-/* Player Bar */
+/* Fixed Player Bar */
 .player {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     background: #282828;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 /* Links */
@@ -139,11 +128,6 @@ a {
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-    .app {
-        max-width: 100%;
-        padding: 10px;
-    }
-
     .profile {
         width: 35px;
         height: 35px;
