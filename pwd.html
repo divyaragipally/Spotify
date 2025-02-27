@@ -19,7 +19,7 @@
             background: #181818;
             padding: 15px;
             border-radius: 8px;
-            width: 300px;  /* Reduced width */
+            width: 300px;  
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         .password-container {
@@ -34,17 +34,9 @@
             border: none;
             border-radius: 5px;
         }
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
         .requirements {
             text-align: left;
             margin: 10px 0;
-            
         }
         button {
             background-color: #1DB954;
@@ -57,19 +49,38 @@
             border: none;
             cursor: pointer;
             margin-top: 10px;
-            text-decoration: none;
         }
-        a{
+        a {
             text-decoration: none;
         }
     </style>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const email = params.get("email");
+            if (email) {
+                localStorage.setItem("signupEmail", email); // Store in localStorage for later use
+            }
+        };
+
+        function redirectToAbout(event) {
+            event.preventDefault();
+            let password = document.getElementById("password").value;
+
+            if (password.length >= 10 && /[a-zA-Z]/.test(password) && /[\d\W]/.test(password)) {
+                window.location.href = `about.html`;
+            } else {
+                alert("Password must contain at least 1 letter, 1 number or special character, and be at least 10 characters long.");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h3>Step 1 of 3</h3>
         <h2 style="font-size:15px;">Create a password</h2>
         <div class="password-container">
-            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="password" placeholder="Password" required>
         </div>
         <div class="requirements">
             <p style="text-align: center;">Your password must contain at least:</p>
@@ -78,7 +89,7 @@
             <input type="radio" disabled> 10 characters<br>
         </div>
         
-        <button><a href=" ./about.html ">Next</a></button>
+        <button onclick="redirectToAbout(event)">Next</button>
     </div>
 </body>
 </html>
